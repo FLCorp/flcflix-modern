@@ -13,23 +13,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-h1{
-    color: #808080;
-    font-family: flc-flix_v3;
-}
-
-.title{
-    font-family: netflix;
-    color: #fff;
-}
-
+  
 /* Styles généraux */
 body {
     font-family: netflix;
     background-color: #000231;
     color: #333;
     line-height: 1.6;
+}
+
+.fsd-logo{
+    width: auto;
+    height: auto;
 }
   
 .container {
@@ -360,14 +355,13 @@ strong{
     background: linear-gradient(to bottom, #17f05c, #1cd9f3);
 }
 
-.wait{
-    text-align: center;
-    font-family: netflix
-}
-
-.img-serie{
+.img-fsd{
     border-radius: 15px;
     margin: 0 auto;
+}
+
+.main1{
+    background: linear-gradient(to bottom, #DB202C, #000231);
 }
 
 @media screen and (max-width : 768px){
@@ -376,12 +370,8 @@ strong{
         height: 130px;
         border-radius: 5px;
     }
-    h1{
-        font-size: large;
-    }
-    .seasons{
-        width: 200px;
-        height: auto;
+    .doc-logo{
+        width: 280px;
     }
     .btn {
         display: inline-block;
@@ -409,6 +399,7 @@ strong{
         font-family: flc-flix_v3;
         font-size: 0.8em;
     }
+      
     .btn2:hover {
         border-color: #fff;
         border-radius: 50px;
@@ -440,7 +431,6 @@ strong{
     }
     .logo{
         width: auto;
-        height: auto;
     }
     nav ul {
         list-style: none;

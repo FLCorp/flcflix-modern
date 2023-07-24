@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-h1{
+h3{
     color: #808080;
     font-family: flc-flix_v3;
 }
@@ -365,7 +365,7 @@ strong{
     font-family: netflix
 }
 
-.img-serie{
+.img-doc{
     border-radius: 15px;
     margin: 0 auto;
 }
@@ -439,6 +439,10 @@ strong{
         font-family: netflix;
     }
     .logo{
+        width: 300px;
+        height: auto;
+    }
+    .fs-logo{
         width: auto;
         height: auto;
     }

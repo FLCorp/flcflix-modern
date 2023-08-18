@@ -246,11 +246,11 @@ strong{
 }
 
 ::-webkit-scrollbar {
-    background-color: #004c8b;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #0407bd;
+    background-color: transparent;
     border-radius: 5px;
     
 }

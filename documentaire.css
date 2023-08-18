@@ -30,6 +30,7 @@ body {
     background-color: #000231;
     color: #333;
     line-height: 1.6;
+    cursor: url('img/cursor-16px.png'), auto;
 }
   
 .container {

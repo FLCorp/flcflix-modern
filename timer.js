@@ -1,62 +1,42 @@
-let days = document.getElementById('days');
-let hours = document.getElementById('hours');
-let minutes = document.getElementById('minutes');
-let seconds = document.getElementById('seconds');
+// Récupérer les éléments du DOM
+const daysElement = document.getElementById('days');
+const hoursElement = document.getElementById('hours');
+const minutesElement = document.getElementById('minutes');
+const secondsElement = document.getElementById('seconds');
 
-let dd = document.getElementById('dd');
-let hh = document.getElementById('hh');
-let mm = document.getElementById('mm');
-let ss = document.getElementById('ss');
+// Date et heure cible (remplacez cette valeur par la date et l'heure souhaitées)
+const targetDate = new Date('2023-09-04T23:59:59');
 
-let day_dot = document.querySelector('day_dot');
-let hr_dot = document.querySelector('hr_dot');
-let min_dot = document.querySelector('min_dot');
-let sec_dot = document.querySelector('sec_dot');
+function updateTimer() {
+  // Obtenir la date et l'heure actuelles
+  const now = new Date();
 
-let endDate = '08/02/2023 00:00:00';
-// date format mm/dd/yyyy
+  // Calculer le temps restant en millisecondes
+  const remainingTime = targetDate - now;
 
-let x = setInterval(function(){
-    let now = new Date(endDate).getTime();
-    let countDown = new Date().getTime();
-    let distance = now - countDown;
+  if (remainingTime <= 0) {
+    // Si la date cible est dépassée, afficher 00:00:00:00
+    daysElement.textContent = '00';
+    hoursElement.textContent = '00';
+    minutesElement.textContent = '00';
+    secondsElement.textContent = '00';
+    clearInterval(interval);
+    alert("La nouvelle MAJ débarque bientôt!");
+    return;
+  }
 
-    // time calculation for days, hours, minutes and seconds
-    let d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let s = Math.floor((distance % (1000 * 60)) / (1000));
-    
-    // output the result in element with id
-    days.innerHTML = d + "<br><br><span>Jours<span>"
-    hours.innerHTML = h + "<br><br><span>Heures<span>"
-    minutes.innerHTML = m + "<br><br><span>Minutes<span>"
-    seconds.innerHTML = s + "<br><br><span>Secondes<span>"
+  // Convertir le temps restant en jours, heures, minutes et secondes
+  const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-    // animate stroke
-    dd.style.strokeDashoffset = 440 - (440 * d) / 365;
-    // 365 jours dans une année
-    hh.style.strokeDashoffset = 440 - (440 * h) / 24;
-    // 24 heures dans une journée
-    mm.style.strokeDashoffset = 440 - (440 * m) / 60;
-    // 60 minutes dans une heure
-    ss.style.strokeDashoffset = 440 - (440 * s) / 60;
-    // 60 secondes dans une minutes
+  // Mettre à jour l'affichage du timer
+  daysElement.textContent = String(days).padStart(2, '0');
+  hoursElement.textContent = String(hours).padStart(2, '0');
+  minutesElement.textContent = String(minutes).padStart(2, '0');
+  secondsElement.textContent = String(seconds).padStart(2, '0');
+}
 
-    // animate circle dots
-    day_dot.style.transform = 'rotateZ(${d * 0.986} deg)';
-    // 360des / 365dys = 0.986
-    hr_dot.style.transform = 'rotateZ(${h * 15} deg)';
-    // 360des / 24hrs = 15
-    min_dot.style.transform = 'rotateZ(${h * 6} deg)';
-    // 360deg /  60minutes = 6
-    sec_dot.style.transform = 'rotateZ(${h * 6} deg)';
-    // 360deg /  60seconds = 6
-
-    // if the countdown is over, write some text
-    if(distance < 0){
-        clearInterval(x);
-        document.getElementById('time').style.display = 'none'
-    }
-
-})
+// Mettre à jour le timer toutes les secondes
+const interval = setInterval(updateTimer, 1000);

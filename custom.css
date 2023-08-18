@@ -20,11 +20,13 @@ body {
     background-color: #000231;
     color: #333;
     line-height: 1.6;
+    cursor: url('img/cursor-16px.png'), auto;
 }
 
 .fsd-logo{
     width: auto;
     height: auto;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
   
 .container {
@@ -53,6 +55,7 @@ nav ul li a {
     font-size: 16px;
     font-family: flc-flix_v3;
     transition: 0.5s ease;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
 nav ul li a:hover {
     color: #0407bd;
@@ -87,6 +90,7 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
   
 .btn:hover {
@@ -215,6 +219,7 @@ strong{
     transition: border-radius 0.5s ease, background-color 0.7s ease, font-size 0.7s ease;
     font-family: flc-flix_v3;
     font-size: 1.5em;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
   
 .btn2:hover {
@@ -237,6 +242,7 @@ strong{
     background: linear-gradient(to right, #0013be, #060054);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
 
 ::-webkit-scrollbar {
@@ -329,6 +335,7 @@ strong{
     transition: background-color 0.7s ease, border-color 0.7s ease, color 0.7s ease;
     font-family: netflix;
     font-size: 1.5em;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
   
 .btn3:hover {
@@ -349,6 +356,7 @@ strong{
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
   
 .chill-btn:hover {
@@ -358,17 +366,71 @@ strong{
 .img-fsd{
     border-radius: 15px;
     margin: 0 auto;
+    transition: width 0.7s ease, height 0.7s ease;
+    cursor: url('img/cursor-16px.png'), auto;
+}
+
+.img-fsd:hover{
+    width: 180px;
+    height: 260px;
+    cursor: url('img/cursor-16px_red.png'), auto;
 }
 
 .main1{
     background: linear-gradient(to bottom, #DB202C, #000231);
 }
+  
+.btn4 {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #181818;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: url('img/cursor-16px_red.png'), auto;
+}
+  
+.btn4:hover {
+    background-color: #333;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Masquer par défaut */
+}
+
+.popup button{
+    width: 100px;
+    height: 30px;
+    background-color: #0003be;
+    border: 2px solid #000231;
+}
+  
 
 @media screen and (max-width : 768px){
     img {
         width: 90px;
         height: 130px;
         border-radius: 5px;
+    }
+    .img-fsd{
+        border-radius: 15px;
+        margin: 0 auto;
+        transition: width 0.7s ease, height 0.7s ease;
+    }
+    .img-fsd:hover{
+        width: 100px;
+        height: 140px;
     }
     .doc-logo{
         width: 280px;
@@ -450,4 +512,22 @@ strong{
         font-size: 16px;
         font-family: netflix;
     }
+    .popup {
+        position: fixed;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        background-color: #1e1e1e;
+        color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        display: none; /* Masquer par défaut */
+    }
+    .popup button{
+        width: 100px;
+        height: 30px;
+        background-color: #0003be;
+        border: 2px solid #000231;
+    }
+    
 }

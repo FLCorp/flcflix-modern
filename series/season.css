@@ -15,7 +15,7 @@
 }
 
 h1{
-    color: #808080;
+    color: white;
     font-family: flc-flix_v3;
 }
 
@@ -182,6 +182,7 @@ button{
 strong{
     font-family: flc-flix_v3;
     color: #fff;
+    font-size: 2em;
 }
 
 .infos{
@@ -286,10 +287,25 @@ strong{
 }
 
 strong{
+    background: linear-gradient(to right, #0407bd, #db07cd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title-strong{
     background: linear-gradient(to right, #be0000,#0407bd);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.strong1{
+    background: linear-gradient(to right, #be0000,#0407bd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1em;
 }
 
 .strong2{
@@ -297,6 +313,7 @@ strong{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 1em;
 }
 
 .group-head {
@@ -366,21 +383,36 @@ strong{
     font-family: netflix
 }
 
-.img-serie{
+.serie-a{
+  color: white;
+  margin-left: 10px;
+  font-family: flc-flix_v3;
+  font-size: 1.5em;
+  transition: color 0.7s ease, font-size 0.7s ease;
+}
+
+.serie-a:hover{
+  color: #db07cd;
+  margin-left: 10px;
+  font-family: flc-flix_v3;
+  font-size: 1.8em;
+}
+
+.other-series{
+    margin-left: 10px;
+}
+
+.iframeimg{
     border-radius: 15px;
-    margin: 0 auto;
 }
 
 @media screen and (max-width : 768px){
     img {
-        width: 90px;
-        height: 130px;
+        width: 250px;
+        height: auto;
         border-radius: 5px;
     }
-    h1{
-        font-size: large;
-    }
-    .seasons{
+    .categorie-name{
         width: 200px;
         height: auto;
     }
@@ -410,6 +442,7 @@ strong{
         font-family: flc-flix_v3;
         font-size: 0.8em;
     }
+      
     .btn2:hover {
         border-color: #fff;
         border-radius: 50px;
@@ -440,6 +473,10 @@ strong{
         font-family: netflix;
     }
     .logo{
+        width: 300px;
+        height: auto;
+    }
+    .vostfr{
         width: auto;
         height: auto;
     }
@@ -460,5 +497,22 @@ strong{
         color: #0407bd;
         font-size: 16px;
         font-family: netflix;
+    }
+    .title-strong{
+        font-size: 1em;
+    }
+    strong{
+        font-size: 1.5em;
+    }
+    iframe{
+        width: auto;
+    }
+    .iframeimg{
+        width: 70px;
+        height: 90px;
+        border-radius: 5px;
+    }
+    .iframetxt{
+        font-size: 1.5em;
     }
 }
